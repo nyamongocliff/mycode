@@ -50,17 +50,20 @@ def get_ip_class(user_input):
 
     ip_class = get_ip_class(user_input)
     print(f"Class: {ip_class}")
-    get_ip_class(user_input)
+    
 
+def main():
+    while True:
+        user_input = input("Enter an IP address and network prefix (e.g., '192.168.1.0/24')or 'Exit' to quit: ").strip().lower()   #  Allow user input
 
-while True:
-    user_input = input("Enter an IP address and network prefix (e.g., '192.168.1.0/24')or 'Exit' to quit: ").strip().lower()   #  Allow user input
+        if user_input.lower =="Exit":
+            print("Exiting the program.")
+            break
+        process_ip_network(user_input)
+        get_ip_class(user_input)
 
-    if user_input.lower =="Exit":
-        print("Exiting the program.")
-        break
-    process_ip_network(user_input)
-
+if __name__ =="__main__":
+        main()
            
 
 
